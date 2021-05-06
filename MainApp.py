@@ -12,7 +12,7 @@ headers_dict = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) A
 #Main interface for Pincode and Date input
 def main():
     
-    print("###########################################")
+    	print("###########################################")
 	print("#        CoWin Availablity Bot            #")
 	print("###########################################")
 
@@ -22,7 +22,7 @@ def main():
 	date = input("Enter date: ")
     
     
-    url = baseUrl + "pincode=" + pincode + "&date=" + date
+    	url = baseUrl + "pincode=" + pincode + "&date=" + date
 
 	response = requests.get(url, headers=headers_dict)
     
@@ -41,9 +41,9 @@ def main():
             print(valid_centers)
         
         else:
-            st.error("No center available")
+            print("No center available")
     else:
-        st.error("No response...")
+        print("No response...")
     
     
     
