@@ -2,8 +2,6 @@
 import json
 import requests
 
-
-
 baseUrl = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?"
 
 #Spoof User-Agent to bypass restrictions
