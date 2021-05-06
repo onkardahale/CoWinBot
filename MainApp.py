@@ -5,7 +5,7 @@ import requests
 baseUrl = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?"
 
 #Spoof User-Agent to bypass restrictions
-headers_dict = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"}
+notScript = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"}
 
 
 #Main interface for Pincode and Date input
@@ -21,7 +21,7 @@ def main():
     date = input("Enter date: ")
     url = baseUrl + "pincode=" + pincode + "&date=" + date
 
-    response = requests.get(url, headers=headers_dict)
+    response = requests.get(url, headers=notScript)
 
     #check for OK status
     if response.status_code == 200:
