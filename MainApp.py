@@ -3,7 +3,7 @@ import json
 import requests
 
 
-#Get form url with PINCODE && DATE inputs from user
+
 baseUrl = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?"
 
 #Spoof User-Agent to bypass restrictions
@@ -17,8 +17,8 @@ def main():
     print("###########################################")
     print("#        CoWin Availablity Bot            #")
     print("###########################################")
-
-
+    
+    #Get form url with PINCODE && DATE inputs from user
     pincode = input("Enter pincode: ")
     date = input("Enter date: ")
     url = baseUrl + "pincode=" + pincode + "&date=" + date
