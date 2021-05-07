@@ -1,13 +1,16 @@
 
 import time
-import json, requests
+import json, requests
+
 import pandas as pd
 
 
 #Get form url with PINCODE && DATE inputs from user
-baseUrl = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/?"
+baseUrl = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/?"
+
 #Spoof User-Agent to bypass restrictions
-headers_dict = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"}
+headers_list = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"}
+
 
 # Main interface
 def main():
@@ -25,15 +28,20 @@ def main():
         time.sleep(3 - ((time.time() - starttime) % 3))
 
 #fn for Pincode and Date input and pulling JSON data
-def cowinApp(pincode,date):
+def cowinApp(pincode,date):
 
-    url = baseUrl + "pincode=" + pincode + "&date=" + date
-    response = requests.get(url, headers=headers_dict)
+
+    url = baseUrl + "pincode=" + pincode + "&date=" + date
+
+    response = requests.get(url, headers=headers_list)
+
 
     #check for OK status
-    if response.status_code == 200:
+    if response.status_code == 200:
+
         jsonStr = json.loads(response.text)['centers']
-        valid_centers = availCenter(jsonStr)
+        valid_centers = availCenter(jsonStr)
+
 
         df = pd.DataFrame(valid_centers, columns=['name', 'address', 'fee_type'])
         if len(df):
@@ -43,18 +51,26 @@ def cowinApp(pincode,date):
             print(df)
         else:
             print("No Available Centers")
-    else:
-        print("No response...")
+    else:
+
+        print("No response...")
+
+
         exit()
 
 #Processes JSON data to extract list of centers with available slot and with needed age preferences
-def availCenter(centerList):
-    validcenters = []
+def availCenter(centerList):
+
+    validcenters = []
+
     for center in centerList:
         for session in center['sessions']:
             if session['min_age_limit'] == 18 and session['available_capacity'] > 0:
-                validcenters.append(center)
-    return validcenters
+                validcenters.append(center)
+
+    return validcenters
 
 
-main()
+
+main()
+
