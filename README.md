@@ -24,4 +24,4 @@ For this, it needs you to keep the **computer on** for the **entire time**.
 
 1. Turn off auto-sleep  
 2. The API is geo-fenced and throws 403 Error for all requests not from India.
-3. Enter the date in DD-MM-YYYY format
+3. Enter the date in DD-MM-YYYY or DD-MM format
