@@ -2,7 +2,6 @@
 import time
 import json
 import requests
-
 import pandas as pd
 
 
@@ -31,11 +30,8 @@ def main():
 #fn for pulling JSON data
 def cowinApp(pincode,date):
 
-
     url = baseUrl + "pincode=" + pincode + "&date=" + date
-
     response = requests.get(url, headers=headers_dict)
-
 
     #check for OK status
     if response.status_code == 200:
@@ -54,8 +50,8 @@ def cowinApp(pincode,date):
         else:
             print("No Available Centers")
     else:
-
         print("No response...")
+        exit()
 
 
 
@@ -72,7 +68,7 @@ def availCenter(centerList):
     return validcenters
 
 
-''''
+"""
 #plot pandas DataFrame to get image sendable by email (hope for future)
 def plotTable(dataframe):
     ax = pyplot.subplot(111, frame_on=True)
@@ -81,7 +77,7 @@ def plotTable(dataframe):
     table(ax, dataframe)
 
     pyplot.savefig('table.png')
-''''
+"""
 
 main()
 
