@@ -25,15 +25,17 @@ def main():
     pincode = input("Enter pincode: ")
     date = input("Enter date: ")
     ageLimit = input("Enter minimum age limit:")
-
+    
+    count = 0
     #execute cowinApp(',') every 3 seconds
     starttime = time.time()
     while True:
-        cowinApp(pincode, date, ageLimit)
+        count = count + 1
+        cowinApp(pincode, date, ageLimit, count)
         time.sleep(3 - ((time.time() - starttime) % 3))
 
 #fn for Pincode and Date input and pulling JSON data
-def cowinApp(pincode, date, ageLimit):
+def cowinApp(pincode, date, ageLimit, pingN):
 
     url = baseUrl + "pincode=" + pincode + "&date=" + date
     response = requests.get(url, headers=headers_list)
@@ -54,7 +56,7 @@ def cowinApp(pincode, date, ageLimit):
             alertSound()
             exit()
         else:
-            print("No Available Centers")
+            print(f'No Available Centers: {pingN}')
     else:
         print("No response...")
         exit()
