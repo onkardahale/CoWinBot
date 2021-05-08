@@ -1,7 +1,6 @@
 
 import time
 import json, requests
-
 import pandas as pd
 
 #supress pygame support message
@@ -36,18 +35,14 @@ def main():
 #fn for Pincode and Date input and pulling JSON data
 def cowinApp(pincode, date, ageLimit):
 
-
     url = baseUrl + "pincode=" + pincode + "&date=" + date
-
     response = requests.get(url, headers=headers_list)
-
 
     #check for OK status
     if response.status_code == 200:
 
         jsonStr = json.loads(response.text)['centers']
         valid_centers = availCenter(jsonStr, ageLimit)
-
 
         df = pd.DataFrame(valid_centers, columns=['name', 'address', 'fee_type'])
         if len(df) > 0:
