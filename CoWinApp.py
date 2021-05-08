@@ -34,7 +34,7 @@ def main():
         cowinApp(pincode, date, ageLimit, count)
         time.sleep(3 - ((time.time() - starttime) % 3))
 
-#fn for Pincode and Date input and pulling JSON data
+#fn for constructing url from Pincode and Date input and pulling JSON data
 def cowinApp(pincode, date, ageLimit, pingN):
 
     url = baseUrl + "pincode=" + pincode + "&date=" + date
