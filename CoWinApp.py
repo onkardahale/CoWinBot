@@ -61,10 +61,7 @@ def cowinApp(pincode, date, ageLimit):
         else:
             print("No Available Centers")
     else:
-
         print("No response...")
-
-
         exit()
 
 #Processes JSON data to extract list of centers with available slot and with needed age preferences
