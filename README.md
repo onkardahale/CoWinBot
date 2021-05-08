@@ -8,7 +8,7 @@ The CoWin API has blocked scripts but CoWinApp handles that by spoofing User-Age
 ----
 
 ## Prerequisite libraries
-
+[Setup coming soon...]
 - **[requests](https://pypi.org/project/requests/)**
 - **[pandas](https://pypi.org/project/pandas/)**
 - **[pygame](https://pypi.org/project/pygame/)**
