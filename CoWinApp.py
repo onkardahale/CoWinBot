@@ -76,8 +76,8 @@ def availCenter(centerList , minAgeLimit):
 def alertSound():
     pygame.mixer.init()
     my_sound = pygame.mixer.Sound('notifSound.wav')
-    my_sound.play()
-    pygame.time.wait(int(my_sound.get_length) * 1000)
+    my_sound.play(1)
+    pygame.time.wait(int(my_sound.get_length()) * 2000)
 
 
 main()
