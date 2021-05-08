@@ -1,7 +1,7 @@
 # CoWinApp
 
-CoWinApp checks availablity of vaccination slots for given Pincode and date.  
-It pulls a list of centers with minimum age limit as 18 and greater than 0 available slot in JSON format and outputs the list in a tabular format.
+CoWinApp checks availablity of vaccination slots for given Pincode, minimum age limit and date.  
+It pulls a list of centers with available slots in JSON format and outputs the list in a tabular format.
 
 The CoWin API has blocked scripts but CoWinApp handles that by spoofing User-Agent header.
 
