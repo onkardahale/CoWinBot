@@ -9,7 +9,7 @@ environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 import pygame
 
-#Get form url with PINCODE && DATE inputs from user
+#API req url which is later appended with pincode and date as per user input
 baseUrl = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?"
 
 #Spoof User-Agent to bypass restrictions
