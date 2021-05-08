@@ -29,7 +29,7 @@ def main():
     #execute cowinApp(',') every 3 seconds
     starttime = time.time()
     while True:
-        cowinApp(pincode, date)
+        cowinApp(pincode, date, ageLimit)
         time.sleep(3 - ((time.time() - starttime) % 3))
 
 #fn for Pincode and Date input and pulling JSON data
