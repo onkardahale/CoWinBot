@@ -11,10 +11,12 @@ The CoWin API has blocked scripts but CoWinApp handles that by spoofing User-Age
 
 - **[requests](https://pypi.org/project/requests/)**
 - **[pandas](https://pypi.org/project/pandas/)**
+- **[pygame](https://pypi.org/project/pygame/)**
 
 #### Installation commands
     pip install requests
     pip install pandas
+    pip install pygame
 
 ----
 
