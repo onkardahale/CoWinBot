@@ -8,7 +8,7 @@ The CoWin API has blocked scripts but CoWinApp handles that by spoofing User-Age
 ----
 
 ## Installing Prerequisites
-    pip3 -r install requirements.txt
+    pip3 install -r requirements.txt
 
 ----
 
