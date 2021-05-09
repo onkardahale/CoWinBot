@@ -1,6 +1,6 @@
-# CoWinApp
+# CoWinBot
 
-CoWinApp checks availablity of vaccination slots for given Pincode, minimum age limit and date.  
+CoWinBot checks availablity of vaccination slots for given Pincode, minimum age limit and date.  
 It pulls a list of centers with available slots in JSON format and outputs the list in a tabular format.
 
 The CoWin API has blocked scripts but CoWinApp handles that by spoofing User-Agent header.
@@ -21,7 +21,7 @@ The CoWin API has blocked scripts but CoWinApp handles that by spoofing User-Age
 ----
 
 ## Usage Details
-CoWinApp pings the API every 3 seconds.
+CoWinBot pings the API every 3 seconds.
 For this, it needs you to keep the **computer on** for the **entire time**.
 
 1. Turn off auto-sleep  
