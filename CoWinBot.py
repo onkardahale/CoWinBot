@@ -46,7 +46,7 @@ def cowinApp(pincode, date, ageLimit, pingN):
         jsonStr = json.loads(response.text)['centers']
         valid_centers = availCenter(jsonStr, ageLimit)
 
-        df = pd.DataFrame(valid_centers, columns=['name', 'address', 'fee_type'])
+        df = pd.DataFrame(valid_centers, columns=['pincode', 'name', 'fee_type'])
         if len(df) > 0:
             print("###########################################")
             print("#          Available Centers              #")
